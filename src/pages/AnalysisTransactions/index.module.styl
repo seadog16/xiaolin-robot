@@ -1,0 +1,32 @@
+.tag
+    margin-left .5rem
+
+.extra
+    text-align right
+
+    &-payment
+        color var(--adm-color-text)
+
+    &-profit
+        color var(--adm-color-danger)
+        margin-left .5rem
+
+.list
+    overflow-y auto
+    :global
+        .adm-list-body
+            border none
+
+    &.users
+        max-height calc(100vh - 38px - 45px)
+
+    &.transactions
+        max-height calc(100vh - 38px - 45px - 31px)
+
+        :global
+            .adm-list-item-content
+                padding 5px 12px 5px 0
+
+.space
+    padding 6px 12px
+    background-color var(--adm-border-color)

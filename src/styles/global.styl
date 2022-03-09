@@ -1,0 +1,68 @@
+body
+    font-family "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif
+    -webkit-font-smoothing antialiased
+    -moz-osx-font-smoothing grayscale
+    margin 0
+    background-color #f0f0f0
+    text-rendering: optimizeLegibility
+
+html,
+body,
+#root
+    height 100%
+
+:root
+    --adm-font-size-main .85rem!important
+
+a
+    cursor pointer
+    color var(--adm-color-primary)
+
+.clearfix
+    &:before
+    &:after
+        content ""
+        display table
+
+    &:after
+        clear both
+
+for i in 1...5
+    h{i}
+        margin 0
+        font-weight 500
+h1
+    font-size 1.4rem
+h2
+    font-size 1.3rem
+h3
+    font-size 1.2rem
+
+.box
+    background-color #fff
+    border-radius 6px
+    padding .5rem
+    overflow hidden
+    margin-top 1rem
+
+.navbar,
+.tabs
+    background-color var(--adm-color-white)
+
+.adm-tabs
+    --title-font-size .85rem!important
+
+.adm-nav-bar-title
+    font-size .85rem!important
+
+.adm-list
+    --font-size .85rem!important
+
+.adm-list-item-content-extra
+    font-size .85rem!important
+
+.adm-list-item-title, .adm-list-item-description
+    font-size .85rem!important
+
+.f085
+    font-size .85rem
