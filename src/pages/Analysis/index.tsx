@@ -31,7 +31,6 @@ const Analysis = () => {
                             {v.element}</Tabs.Tab>
                     )
                 })}
-
             </Tabs>
         </>
     )

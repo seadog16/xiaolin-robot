@@ -3,23 +3,11 @@ import {CheckCircleFill} from 'antd-mobile-icons';
 import {useNavigate} from 'react-router-dom';
 import {useState} from 'react';
 import style from '../GroupManage/index.module.styl';
+import groups from './mock.json';
 
 const GroupManageAdd = () => {
     const navigate = useNavigate();
     const [selection, setSelections]: [string[]|never[], Function] = useState([]);
-    const groups = [{
-        groupname: '创链CCMALL核心群(12)'
-    }, {
-        groupname: '创链CCMALL核心群(12)'
-    }, {
-        groupname: '创链CCMALL核心群(12)'
-    }, {
-        groupname: '创链CCMALL核心群(12)'
-    }, {
-        groupname: '创链CCMALL核心群(12)'
-    }, {
-        groupname: '创链CCMALL核心群(12)'
-    }];
     return (
         <>
             <NavBar

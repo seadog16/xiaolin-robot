@@ -6,6 +6,10 @@ const Analysis = lazy(() => import('@/pages/Analysis'));
 const GroupManage = lazy(() => import('@/pages/GroupManage'));
 const GroupManageAdd = lazy(() => import('@/pages/GroupManageAdd'));
 const BroadcastSetting = lazy(() => import('@/pages/BroadcastSetting'));
+const AutoReply = lazy(() => import('@/pages/AutoReply'));
+const AutoReplyAdd = lazy(() => import('@/pages/AutoReplyAdd'));
+const WelcomeEnter = lazy(() => import('@/pages/WelcomeEnter'));
+const AutoMoments = lazy(() => import('@/pages/AutoMoments'));
 
 const routes = [{
     path: '/',
@@ -25,6 +29,18 @@ const routes = [{
 }, {
     path: '/broadcast',
     element: <BroadcastSetting/>
+}, {
+    path: '/autoreply',
+    element: <AutoReply/>
+}, {
+    path: '/autoreply/add',
+    element: <AutoReplyAdd/>
+}, {
+    path: '/welcome',
+    element: <WelcomeEnter/>
+}, {
+    path: '/automoments',
+    element: <AutoMoments/>
 }];
 
 

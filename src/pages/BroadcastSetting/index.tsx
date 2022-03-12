@@ -21,33 +21,48 @@ const BroadcastSetting = () => {
         <NavBar
             className="navbar"
             onBack={() => navigate('/robot')}>播货设置</NavBar>
-        <Card className={style.card}>
-            <List mode="card" className={style.list}>
-                <List.Item
-                    prefix={
-                        <Avatar src={`https://picsum.photos/200?autobroadcast?broadcastsetting`}/>
-                    }
-                    extra={<Switch/>}>创链CCMALL核心群</List.Item>
-            </List>
-        </Card>
-        <Card className={style.card} title="素材计划">
-            <Tabs>
-                {tabs.map(v => (
-                    <Tabs.Tab title={v.label} key={v.key}>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                    </Tabs.Tab>
-                ))}
-            </Tabs>
-        </Card>
-        <div className={style.bottom}>
-            <Button
-                block
-                color="primary"
-                onClick={() => {}}>确认跟发</Button>
+        <div className={style.flex}>
+            <Card className={`${style.card} ${style.top}`}>
+                <List mode="card" className={style.list}>
+                    <List.Item
+                        prefix={
+                            <Avatar src={`https://picsum.photos/200?autobroadcast?broadcastsetting`}/>
+                        }
+                        extra={<Switch/>}>创链CCMALL核心群</List.Item>
+                </List>
+            </Card>
+            <Card className={`${style.card} ${style.center}`} title="素材计划">
+                <Tabs>
+                    {tabs.map(v => (
+                        <Tabs.Tab title={v.label} key={v.key}>
+                            <p>123</p>
+                            <p>123</p>
+                            <p>123</p>
+                            <p>123</p>
+                            <p>123</p>
+                            <p>123</p>
+                            <p>123</p>
+                            <p>456</p>
+                            <p>123</p>
+                            <p>123</p>
+                            <p>123</p>
+                            <p>123</p>
+                            <p>123</p>
+                            <p>123</p>
+                            <p>789</p>
+                            <p>123</p>
+                            <p>123</p>
+                            <p>123</p>
+                        </Tabs.Tab>
+                    ))}
+                </Tabs>
+            </Card>
+            <div className={style.bottom}>
+                <Button
+                    block
+                    color="primary"
+                    onClick={() => {}}>确认跟发</Button>
+            </div>
         </div>
     </>)
 }
