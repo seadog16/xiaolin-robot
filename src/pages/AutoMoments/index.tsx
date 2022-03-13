@@ -12,13 +12,14 @@ const AutoMoments = () => {
             <NavBar
                 className="navbar"
                 onBack={() => navigate('/robot')}>自动发圈</NavBar>
-            <Card>
+            <Card className="margin">
                 <Space
                     justify="between"
+                    align="center"
                     block>
                     <div>
-                        <div>自动跟发官方朋友圈</div>
-                        <div>自动转发店主链接</div>
+                        <div className="fontMain">自动跟发官方朋友圈</div>
+                        <div className="fontSlave">自动转发店主链接</div>
                     </div>
                     <Switch/>
                 </Space>

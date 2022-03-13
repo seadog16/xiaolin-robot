@@ -1,10 +1,11 @@
+import {useState, useEffect} from 'react';
 import {NavBar} from 'antd-mobile';
 import style from './index.module.styl';
-import UserInfo from '@/pages/RobotMainUserInfo';
-import Analysis from '@/pages/RobotMainAnalysis';
-import GroupManage from '@/pages/RobotMainGroupManage';
-import AutoBroadcast from '@/pages/RobotMainAutoBroadcast';
-import Assistant from '@/pages/RobotMainAssistant';
+import UserInfo from '@/pages/MainUserInfo';
+import Analysis from '@/pages/MainAnalysis';
+import GroupManage from '@/pages/MainGroupManage';
+import AutoBroadcast from '@/pages/MainAutoBroadcast';
+import Assistant from '@/pages/MainAssistant';
 
 const RobotMain = () => {
     return (

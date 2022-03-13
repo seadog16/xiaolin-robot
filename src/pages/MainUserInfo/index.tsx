@@ -1,7 +1,9 @@
+import {observer} from 'mobx-react-lite';
 import {Tag, Card, Avatar, SwipeAction} from 'antd-mobile';
 import style from './index.module.styl';
+import store from '@/store';
 
-export default () => {
+const RobotMainUserInfo = () => {
     const name = '沐风';
     const deadline = '2022-05-06 09:53:15'
     const actions = [{
@@ -12,7 +14,7 @@ export default () => {
         key: 'exit',
         text: '退出',
         color: 'danger'
-    }]
+    }];
     return (
         <Card>
             <SwipeAction rightActions={actions}>
@@ -37,3 +39,5 @@ export default () => {
         </Card>
     )
 }
+
+export default observer(RobotMainUserInfo);

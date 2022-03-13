@@ -1,7 +1,8 @@
 import {lazy} from 'react';
 import {Navigate} from 'react-router-dom';
 
-const Main = lazy(() => import('@/pages/RobotMain'));
+const Login = lazy(() => import('@/pages/Login'));
+const Main = lazy(() => import('@/pages/Main'));
 const Analysis = lazy(() => import('@/pages/Analysis'));
 const GroupManage = lazy(() => import('@/pages/GroupManage'));
 const GroupManageAdd = lazy(() => import('@/pages/GroupManageAdd'));
@@ -10,12 +11,19 @@ const AutoReply = lazy(() => import('@/pages/AutoReply'));
 const AutoReplyAdd = lazy(() => import('@/pages/AutoReplyAdd'));
 const WelcomeEnter = lazy(() => import('@/pages/WelcomeEnter'));
 const AutoMoments = lazy(() => import('@/pages/AutoMoments'));
+const Robot = lazy(() => import('@/pages/Robot'));
 
 const routes = [{
-    path: '/',
-    element: <Navigate to="/robot"/>
+    path: '/login',
+    element: <Login/>
 }, {
-    path: '/robot',
+    path: '/',
+    element: <Navigate to="/main"/>
+}, {
+    path: 'robot',
+    element: <Robot/>
+}, {
+    path: '/main',
     element: <Main/>
 }, {
     path: '/analysis/:key',
