@@ -7,8 +7,13 @@ import store from '@/store'
 const Login = () => {
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('user');
-    store.setDevices([]);
-    store.setWx({});
+    store.setState({
+        devices: [],
+        wx: {},
+        devicesLoaded: false,
+        wxLoaded: false,
+        wxOnline: false
+    });
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState('');
     const phoneRegex = /^1(3\d|4[5-9]|5[0-35-9]|6[2567]|7[0-8]|8\d|9[0-35-9])\d{8}$/

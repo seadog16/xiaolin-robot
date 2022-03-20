@@ -1,15 +1,15 @@
 import {useEffect} from 'react';
 import {observer} from 'mobx-react-lite';
-import {NavBar, Empty, Button, AutoCenter, Space} from 'antd-mobile';
+import {NavBar} from 'antd-mobile';
 import style from './index.module.styl';
-import UserInfo from '@/pages/MainUserInfo';
+import RobotLogin from '@/pages/RobotLogin';
 import RobotEmpty from '@/pages/RobotEmpty';
-import {devicesList} from '@/request';
+import {getDevicesList} from '@/request';
 import store from '@/store';
 
-const RobotMain = () => {
+const Robot = () => {
     useEffect(() => {
-        devicesList();
+        getDevicesList({});
     }, []);
     return (
         <>
@@ -18,7 +18,7 @@ const RobotMain = () => {
                 backArrow={false}>小邻机器人</NavBar>
             <div className={`${style.main} clearfix`}>
                 {store.device
-                    ? <UserInfo/>
+                    ? <RobotLogin/>
                     : <RobotEmpty/>
                 }
             </div>
@@ -26,4 +26,4 @@ const RobotMain = () => {
     )
 }
 
-export default observer(RobotMain);
+export default observer(Robot);

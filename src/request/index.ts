@@ -33,28 +33,42 @@ export const login = ({phone, password}: {phone: string; password: string}) => {
             if (code === 200) {
                 sessionStorage.setItem('token', data.token);
                 sessionStorage.setItem('user', data.id);
-                location.replace('/#/robot');
+                location.assign('/#/robot');
             }
             return res;
         });
 }
 
 export const getDevicesList = ({deviceId}: {deviceId?: number}) =>
-    request.post('/device/list', {deviceId});
+    request.post('/device/list', {deviceId}).then((res: any) => {
+        if (res.code === 200) {
+            store.setState({
+                devices: res.data,
+                devicesLoaded: true
+            });
+        }
+    });
 
-export const checkWXLogin = ({deviceId}: {deviceId:string}) =>
-    request.post('/wxRobot/checkLogin', {deviceId})
-        .then(res => {
-            console.log(res)
-            return res;
-        });
+export const checkWXLogin = ({deviceId}: {deviceId:number}) =>
+    request.get('/wxRobot/checkLogin', {
+        params: {
+            deviceId
+        }
+    });
+
+export const WXLogin = ({deviceId}: {deviceId: number}) =>
+    request.post('/wxRobot/login', {deviceId});
 
 export const devicesList = async() => {
-    const list = await getDevicesList({});
-    store.setDevices(list.data);
+    const list: any = await getDevicesList({});
+    if (list.code === 200) store.setState({
+        devices: list.data
+    });
     if (store.device) {
-        const wx = await checkWXLogin({deviceId: store.device.deviceId});
-        store.setWx(wx.data);
+        const wx: any = await checkWXLogin({deviceId: store.device.deviceId});
+        if (wx.code === 200) store.setState({
+            wx: wx.data
+        });
     }
 }
 
@@ -63,3 +77,14 @@ export const newDevice = ({deviceId}: {deviceId?: string|number}) =>
         params: {deviceId}
     });
 
+
+
+export const loginAgain = ({deviceId}: {deviceId: string|number}) =>
+    request.get('/wxRobot/loginAgain', {
+        params: {deviceId}
+    });
+
+export const isOnline = ({deviceId}: {deviceId: string|number}) =>
+    request.get('/wxRobot/isOnline', {
+        params: {deviceId}
+    })

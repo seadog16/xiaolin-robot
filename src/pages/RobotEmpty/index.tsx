@@ -10,14 +10,11 @@ export default () => {
         newDevice({deviceId: store.nonDevice?.deviceId})
             .then(({code, message}: any) => {
                 setLoading(false);
-                if (code === 200) {
-                    devicesList();
-                } else {
-                    Toast.show({
-                        content: message,
-                        icon: 'fail'
-                    })
-                }
+                Toast.show({
+                    content: message,
+                    icon: code === 200 ? 'success' : 'fail'
+                })
+                devicesList();
             });
     }
     return (
